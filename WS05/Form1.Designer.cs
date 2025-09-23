@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.GuessNumber = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@
             this.txtGuessNumber = new System.Windows.Forms.TextBox();
             this.btnCreateRnd = new System.Windows.Forms.Button();
             this.picDice = new System.Windows.Forms.PictureBox();
+            this.tmrRoll = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picDice)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +73,8 @@
             this.btnRoll.Text = "Roll";
             this.btnRoll.UseVisualStyleBackColor = true;
             this.btnRoll.Click += new System.EventHandler(this.btnRoll_Click);
+            this.btnRoll.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRoll_MouseDown);
+            this.btnRoll.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnRoll_MouseUp);
             // 
             // txtInrerval
             // 
@@ -110,6 +114,10 @@
             this.picDice.TabStop = false;
             this.picDice.Click += new System.EventHandler(this.picDice_Click);
             // 
+            // tmrRoll
+            // 
+            this.tmrRoll.Tick += new System.EventHandler(this.tmrRoll_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -139,6 +147,7 @@
         private System.Windows.Forms.TextBox txtGuessNumber;
         private System.Windows.Forms.Button btnCreateRnd;
         private System.Windows.Forms.PictureBox picDice;
+        private System.Windows.Forms.Timer tmrRoll;
     }
 }
 

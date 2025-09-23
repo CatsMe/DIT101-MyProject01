@@ -31,16 +31,10 @@ namespace WS05
         {
             int myInterval;
             //myInterval = txtInrerval.Text;
-            myInterval = Convert.ToInt32(txtInrerval.Text);
+            //myInterval = Convert.ToInt32(txtInrerval.Text);
             //MessageBox.Show("Convert Complete");
 
-            int guessResult;
-            guessResult = rnd.Next(1,7);
-            //txtGuessNumber.Text = guessResult.ToString();
-            txtGuessNumber.Text = "" + guessResult;
-
-            //picDice.Image = Image.FromFile("D:\\School Space\\DIT101\\Asset\\dice\\3.png");
-            picDice.Image = Image.FromFile("D:\\School Space\\DIT101\\Asset\\dice\\" + guessResult + ".png");
+            
         }
 
         Random rnd;
@@ -55,6 +49,27 @@ namespace WS05
         private void picDice_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tmrRoll_Tick(object sender, EventArgs e)
+        {
+            int guessResult;
+            guessResult = rnd.Next(1, 7);
+            //txtGuessNumber.Text = guessResult.ToString();
+            txtGuessNumber.Text = "" + guessResult;
+
+            //picDice.Image = Image.FromFile("D:\\School Space\\DIT101\\Asset\\dice\\3.png");
+            picDice.Image = Image.FromFile("D:\\School Space\\DIT101\\Asset\\dice\\" + guessResult + ".png");
+        }
+
+        private void btnRoll_MouseDown(object sender, MouseEventArgs e)
+        {
+            tmrRoll.Enabled = true;
+        }
+
+        private void btnRoll_MouseUp(object sender, MouseEventArgs e)
+        {
+            tmrRoll.Enabled = false;
         }
     }
 }
