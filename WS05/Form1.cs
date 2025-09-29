@@ -30,9 +30,9 @@ namespace WS05
         private void btnRoll_Click(object sender, EventArgs e)
         {
             int myInterval;
-            //myInterval = txtInrerval.Text;
-            //myInterval = Convert.ToInt32(txtInrerval.Text);
-            //MessageBox.Show("Convert Complete");
+            //myInterval = txtInrerval.Text; -- คือตัวที่ไม่สามารถใช้ได้สำหรับภาษา C#
+            myInterval = Convert.ToInt32(txtInrerval.Text);
+            //MessageBox.Show("Convert Complete"); -- ใช้ตรวจสอบการทำงานด้านบน
 
             
         }
@@ -43,7 +43,7 @@ namespace WS05
 
             rnd = new Random();
 
-            picDice.Image = Image.FromFile("D:\\School Space\\DIT101\\Asset\\dice\\5.png");
+            picDice.Image = Image.FromFile("D:\\School space\\Asset\\Picture\\CatCircular.jpg");
         }
 
         private void picDice_Click(object sender, EventArgs e)
@@ -55,20 +55,21 @@ namespace WS05
         {
             int guessResult;
             guessResult = rnd.Next(1, 7);
-            //txtGuessNumber.Text = guessResult.ToString();
+            //txtGuessNumber.Text = guessResult.ToString(); -- ใช้ได้เหมือนกันกับบรรทัดล่าง
             txtGuessNumber.Text = "" + guessResult;
 
-            //picDice.Image = Image.FromFile("D:\\School Space\\DIT101\\Asset\\dice\\3.png");
-            picDice.Image = Image.FromFile("D:\\School Space\\DIT101\\Asset\\dice\\" + guessResult + ".png");
+            picDice.Image = Image.FromFile("D:\\School space\\Asset\\dice\\" + guessResult + ".png");
         }
 
         private void btnRoll_MouseDown(object sender, MouseEventArgs e)
         {
+            //เมื่อกดค้างที่ปุ่มRollจะทำการสุ่มลูกเต๋า
             tmrRoll.Enabled = true;
         }
 
         private void btnRoll_MouseUp(object sender, MouseEventArgs e)
         {
+            //เมื่อปล่อนที่ปุ่มRollจะทำการหยุดสุ่มลูกเต๋า
             tmrRoll.Enabled = false;
         }
     }
