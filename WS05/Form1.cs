@@ -69,7 +69,7 @@ namespace WS05
 
         private void btnRoll_MouseUp(object sender, MouseEventArgs e)
         {
-            //เมื่อปล่อนที่ปุ่มRollจะทำการหยุดสุ่มลูกเต๋า
+            //เมื่อปล่อยที่ปุ่มRollจะทำการหยุดสุ่มลูกเต๋า
             tmrRoll.Enabled = false;
         }
     }
